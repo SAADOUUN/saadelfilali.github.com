@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[Your Name] - [Your Profession]. Portfolio website showcasing my work, skills, and projects.">
     <title>[Your Name] - [Your Profession]</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <style>
+
+    <style>
 /* General Styling & Variables */
 :root {
     --bg-color: #121212;
@@ -20,9 +23,7 @@
     --body-font: 'Inter', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
@@ -44,9 +45,7 @@ h2 {
     letter-spacing: 2px;
 }
 
-section {
-    padding: 100px 10%;
-}
+section { padding: 100px 10%; }
 
 /* Header & Navigation */
 .main-header {
@@ -88,8 +87,44 @@ nav a {
     transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: var(--accent-color);
+nav a:hover { color: var(--accent-color); }
+
+/* Hamburger Menu Button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+/* Mobile Nav */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 10%;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        padding: 10px;
+    }
+
+    nav ul.show {
+        display: flex;
+        animation: fadeIn 0.3s ease forwards;
+    }
+
+    .menu-toggle { display: block; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Hero Section */
@@ -120,7 +155,7 @@ nav a:hover {
     padding: 15px 30px;
     text-decoration: none;
     font-weight: 700;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -145,9 +180,7 @@ nav a:hover {
     object-fit: cover;
     border: 5px solid var(--accent-color);
 }
-.about-container p {
-    line-height: 1.8;
-}
+.about-container p { line-height: 1.8; }
 
 /* Skills Section */
 #skills { background-color: var(--bg-color); }
@@ -192,6 +225,10 @@ nav a:hover {
 .portfolio-item img {
     width: 100%;
     display: block;
+    transition: transform 0.3s ease;
+}
+.portfolio-item:hover img {
+    transform: scale(1.05);
 }
 .portfolio-item h3, .portfolio-item p, .portfolio-item a {
     padding: 0 20px;
@@ -216,6 +253,34 @@ nav a:hover {
     margin: 0 auto 30px auto;
     line-height: 1.6;
 }
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+input, textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--secondary-color);
+    background: var(--primary-color);
+    color: var(--text-color);
+}
+textarea { resize: vertical; min-height: 120px; }
+button[type="submit"] {
+    background: var(--accent-color);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+}
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+}
 .social-links {
     margin-top: 40px;
 }
@@ -226,9 +291,7 @@ nav a:hover {
     font-size: 1.2rem;
     transition: color 0.3s ease;
 }
-.social-links a:hover {
-    color: var(--accent-color);
-}
+.social-links a:hover { color: var(--accent-color); }
 
 /* Footer */
 footer {
@@ -239,24 +302,24 @@ footer {
     color: #777;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
     h2 { font-size: 2rem; }
-    nav ul { display: none; } /* Simple responsive fix, can be replaced with a hamburger menu */
     .about-container { flex-direction: column; text-align: center; }
 }
-  </style>
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit-code.js" crossorigin="anonymous"></script> </head>
+    </style>
+</head>
 <body>
 
     <header class="main-header">
         <nav>
-            <div class="logo">[Your Initials]</div>
+            <div class="logo" aria-label="Logo">[Your Initials]</div>
+            <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" aria-label="About Me">About</a></li>
+                <li><a href="#portfolio" aria-label="Portfolio">Portfolio</a></li>
+                <li><a href="#contact" aria-label="Contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -273,7 +336,7 @@ footer {
         <section id="about">
             <h2>About Me</h2>
             <div class="about-container">
-                <img src="[your-photo.jpg]" alt="A professional photo of [Your Name]" class="profile-photo">
+                <img src="[your-photo.jpg]" alt="Professional photo of [Your Name]" class="profile-photo">
                 <p>
                     [Write a compelling paragraph about yourself here. Talk about your passion, your experience, and what drives you. Keep it engaging and professional.]
                     <br><br>
@@ -301,19 +364,19 @@ footer {
                     <img src="[project1-image.jpg]" alt="Screenshot of Project 1">
                     <h3>[Project Title 1]</h3>
                     <p>[Brief description of the project, the technologies used, and your role.]</p>
-                    <a href="[link-to-project-1]" target="_blank">View Project</a>
+                    <a href="[link-to-project-1]" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
                 <div class="portfolio-item">
                     <img src="[project2-image.jpg]" alt="Screenshot of Project 2">
                     <h3>[Project Title 2]</h3>
                     <p>[Brief description of the project, the technologies used, and your role.]</p>
-                    <a href="[link-to-project-2]" target="_blank">View Project</a>
+                    <a href="[link-to-project-2]" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
                 <div class="portfolio-item">
                     <img src="[project3-image.jpg]" alt="Screenshot of Project 3">
                     <h3>[Project Title 3]</h3>
                     <p>[Brief description of the project, the technologies used, and your role.]</p>
-                    <a href="[link-to-project-3]" target="_blank">View Project</a>
+                    <a href="[link-to-project-3]" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
             </div>
         </section>
@@ -321,11 +384,17 @@ footer {
         <section id="contact">
             <h2>Get In Touch</h2>
             <p>I'm currently available for freelance work and new opportunities. Let's create something great together.</p>
-            <a href="mailto:[your-email@example.com]" class="cta-button">Say Hello</a>
+            <!-- Contact Form -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="_replyto" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
             <div class="social-links">
-                <a href="[your-linkedin-url]" target="_blank">LinkedIn</a>
-                <a href="[your-github-url]" target="_blank">GitHub</a>
-                <a href="[your-twitter-url]" target="_blank">Twitter</a>
+                <a href="[your-linkedin-url]" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="[your-github-url]" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="[your-twitter-url]" target="_blank" rel="noopener noreferrer">Twitter</a>
             </div>
         </section>
     </main>
@@ -335,36 +404,34 @@ footer {
     </footer>
   
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('nav a');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // Also apply to hero CTA button
-    const ctaButton = document.querySelector('.hero-content .cta-button');
-     if(ctaButton) {
-        ctaButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+    document.addEventListener('DOMContentLoaded', () => {
+        // Smooth scrolling
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetSection = document.querySelector(this.getAttribute('href'));
+                if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.querySelector('nav ul').classList.remove('show'); // Close menu on click
             });
         });
-     }
-});
-</script>
+
+        // Hero CTA button smooth scroll
+        const ctaButton = document.querySelector('.hero-content .cta-button');
+        if(ctaButton) {
+            ctaButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        // Hamburger Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+    });
+    </script>
 </body>
 </html>
