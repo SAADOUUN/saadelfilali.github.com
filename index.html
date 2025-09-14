@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Your Name] - [Your Profession]</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
+/* General Styling & Variables */
+:root {
+    --bg-color: #121212;
+    --primary-color: #1e1e1e;
+    --secondary-color: #2a2a2a;
+    --accent-color: #007BFF;
+    --text-color: #e0e0e0;
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+section {
+    padding: 100px 10%;
+}
+
+/* Header & Navigation */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 10px 10%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--bg-color);
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.hero-content .subtitle {
+    font-size: 1.5rem;
+    color: #a0a0a0;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+/* About Section */
+#about { background-color: var(--primary-color); }
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.profile-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--accent-color);
+}
+.about-container p {
+    line-height: 1.8;
+}
+
+/* Skills Section */
+#skills { background-color: var(--bg-color); }
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.skill-item {
+    background: var(--primary-color);
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    border: 1px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+.skill-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+/* Portfolio Section */
+#portfolio { background-color: var(--primary-color); }
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.portfolio-item {
+    background: var(--secondary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+.portfolio-item:hover {
+    transform: translateY(-10px);
+}
+.portfolio-item img {
+    width: 100%;
+    display: block;
+}
+.portfolio-item h3, .portfolio-item p, .portfolio-item a {
+    padding: 0 20px;
+}
+.portfolio-item h3 { margin-top: 20px; }
+.portfolio-item p { margin-bottom: 20px; color: #a0a0a0; }
+.portfolio-item a {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    background-color: var(--bg-color);
+}
+#contact p {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+.social-links {
+    margin-top: 40px;
+}
+.social-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    nav ul { display: none; } /* Simple responsive fix, can be replaced with a hamburger menu */
+    .about-container { flex-direction: column; text-align: center; }
+}
+  </style>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit-code.js" crossorigin="anonymous"></script> </head>
+<body>
+
+    <header class="main-header">
+        <nav>
+            <div class="logo">[Your Initials]</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Hi, I'm [Your Name]</h1>
+                <p class="subtitle">[Your Profession / Tagline]</p>
+                <a href="#portfolio" class="cta-button">View My Work</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <img src="[your-photo.jpg]" alt="A professional photo of [Your Name]" class="profile-photo">
+                <p>
+                    [Write a compelling paragraph about yourself here. Talk about your passion, your experience, and what drives you. Keep it engaging and professional.]
+                    <br><br>
+                    [Add a second paragraph talking about your specific skills or what you are looking for in your next role or project. This is your chance to sell yourself!]
+                </p>
+            </div>
+        </section>
+        
+        <section id="skills">
+             <h2>My Skills</h2>
+             <div class="skills-grid">
+                <div class="skill-item">[Skill 1, e.g., JavaScript]</div>
+                <div class="skill-item">[Skill 2, e.g., React]</div>
+                <div class="skill-item">[Skill 3, e.g., Node.js]</div>
+                <div class="skill-item">[Skill 4, e.g., Figma]</div>
+                <div class="skill-item">[Skill 5, e.g., UI/UX Design]</div>
+                <div class="skill-item">[Skill 6, e.g., Project Management]</div>
+             </div>
+        </section>
+
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="[project1-image.jpg]" alt="Screenshot of Project 1">
+                    <h3>[Project Title 1]</h3>
+                    <p>[Brief description of the project, the technologies used, and your role.]</p>
+                    <a href="[link-to-project-1]" target="_blank">View Project</a>
+                </div>
+                <div class="portfolio-item">
+                    <img src="[project2-image.jpg]" alt="Screenshot of Project 2">
+                    <h3>[Project Title 2]</h3>
+                    <p>[Brief description of the project, the technologies used, and your role.]</p>
+                    <a href="[link-to-project-2]" target="_blank">View Project</a>
+                </div>
+                <div class="portfolio-item">
+                    <img src="[project3-image.jpg]" alt="Screenshot of Project 3">
+                    <h3>[Project Title 3]</h3>
+                    <p>[Brief description of the project, the technologies used, and your role.]</p>
+                    <a href="[link-to-project-3]" target="_blank">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>I'm currently available for freelance work and new opportunities. Let's create something great together.</p>
+            <a href="mailto:[your-email@example.com]" class="cta-button">Say Hello</a>
+            <div class="social-links">
+                <a href="[your-linkedin-url]" target="_blank">LinkedIn</a>
+                <a href="[your-github-url]" target="_blank">GitHub</a>
+                <a href="[your-twitter-url]" target="_blank">Twitter</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 [Your Name]. All Rights Reserved.</p>
+    </footer>
+  
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Also apply to hero CTA button
+    const ctaButton = document.querySelector('.hero-content .cta-button');
+     if(ctaButton) {
+        ctaButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+     }
+});
+</script>
+</body>
+</html>
