@@ -1,437 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="[Your Name] - [Your Profession]. Portfolio website showcasing my work, skills, and projects.">
-    <title>[Your Name] - [Your Profession]</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="[Your Name] - [Your Profession]. Colorful portfolio showcasing my work, skills, and projects.">
+  <title>SAAD - Cyborg</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
-    <style>
-/* General Styling & Variables */
+  <style>
+/* 🌈 Colorful Theme */
 :root {
-    --bg-color: #121212;
-    --primary-color: #1e1e1e;
-    --secondary-color: #2a2a2a;
-    --accent-color: #007BFF;
-    --text-color: #e0e0e0;
-    --heading-font: 'Montserrat', sans-serif;
-    --body-font: 'Inter', sans-serif;
+  --bg-gradient: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);
+  --primary-color: rgba(255, 255, 255, 0.8);
+  --secondary-color: rgba(255, 255, 255, 0.6);
+  --accent-color: #ff6f61;
+  --text-color: #2d2d2d;
+  --heading-font: 'Montserrat', sans-serif;
+  --body-font: 'Inter', sans-serif;
 }
 
-html { scroll-behavior: smooth; }
-
 body {
-    margin: 0;
-    font-family: var(--body-font);
-    background-color: var(--bg-color);
-    color: var(--text-color);
+  margin: 0;
+  font-family: var(--body-font);
+  background: var(--bg-gradient);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color: var(--text-color);
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 h1, h2, h3 {
-    font-family: var(--heading-font);
-    color: #ffffff;
+  font-family: var(--heading-font);
+  color: #111;
 }
 
 h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 section { padding: 100px 10%; }
 
-/* Header & Navigation */
+/* 🌟 Navigation Bar */
 .main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(18, 18, 18, 0.8);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    padding: 10px 10%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 12px 10%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav .logo {
-    font-family: var(--heading-font);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--accent-color);
+  font-family: var(--heading-font);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent-color);
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  align-items: center;
 }
 
 nav a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 700;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
-nav a:hover { color: var(--accent-color); }
+nav a:hover {
+  background: var(--accent-color);
+  color: white;
+  box-shadow: 0 4px 10px rgba(255, 111, 97, 0.4);
+}
 
-/* Hamburger Menu Button */
+/* Hamburger Menu */
 .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    color: var(--text-color);
-    cursor: pointer;
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  cursor: pointer;
 }
 
 /* Mobile Nav */
 @media (max-width: 768px) {
-    nav ul {
-        display: none;
-        position: absolute;
-        top: 60px;
-        right: 10%;
-        background-color: var(--primary-color);
-        flex-direction: column;
-        width: 200px;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        padding: 10px;
-    }
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10%;
+    background: rgba(255,255,255,0.95);
+    flex-direction: column;
+    width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    padding: 15px;
+  }
 
-    nav ul.show {
-        display: flex;
-        animation: fadeIn 0.3s ease forwards;
-    }
+  nav ul.show { display: flex; }
 
-    .menu-toggle { display: block; }
+  .menu-toggle { display: block; }
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Hero Section */
+/* 🎯 Hero Section */
 #hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: var(--bg-color);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 10px;
+  font-size: 3.5rem;
+  margin-bottom: 10px;
 }
 
 .hero-content .subtitle {
-    font-size: 1.5rem;
-    color: #a0a0a0;
-    margin-bottom: 30px;
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 30px;
 }
 
 .cta-button {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  background: var(--accent-color);
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 111, 97, 0.4);
 }
 
-/* About Section */
-#about { background-color: var(--primary-color); }
+/* 🎨 About Section */
+#about { background: rgba(255, 255, 255, 0.6); border-radius: 20px; margin-top: 80px; }
 .about-container {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    max-width: 900px;
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 .profile-photo {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid var(--accent-color);
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--accent-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 .about-container p { line-height: 1.8; }
 
-/* Skills Section */
-#skills { background-color: var(--bg-color); }
+/* 🧩 Skills Section */
+#skills { text-align: center; }
 .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .skill-item {
-    background: var(--primary-color);
-    padding: 15px 25px;
-    border-radius: 8px;
-    font-weight: 700;
-    border: 1px solid var(--secondary-color);
-    transition: all 0.3s ease;
+  background: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 .skill-item:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-color);
+  transform: scale(1.1);
+  background: var(--accent-color);
+  color: white;
 }
 
-/* Portfolio Section */
-#portfolio { background-color: var(--primary-color); }
+/* 🖼 Portfolio Section */
 .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 .portfolio-item {
-    background: var(--secondary-color);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
-.portfolio-item:hover {
-    transform: translateY(-10px);
-}
+.portfolio-item:hover { transform: translateY(-8px); }
 .portfolio-item img {
-    width: 100%;
-    display: block;
-    transition: transform 0.3s ease;
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
 }
-.portfolio-item:hover img {
-    transform: scale(1.05);
-}
+.portfolio-item:hover img { transform: scale(1.05); }
 .portfolio-item h3, .portfolio-item p, .portfolio-item a {
-    padding: 0 20px;
+  padding: 0 20px;
 }
 .portfolio-item h3 { margin-top: 20px; }
-.portfolio-item p { margin-bottom: 20px; color: #a0a0a0; }
+.portfolio-item p { margin-bottom: 20px; color: #555; }
 .portfolio-item a {
-    display: inline-block;
-    margin-bottom: 20px;
-    color: var(--accent-color);
-    font-weight: bold;
-    text-decoration: none;
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+  font-weight: bold;
+  text-decoration: none;
 }
 
-/* Contact Section */
-#contact {
-    text-align: center;
-    background-color: var(--bg-color);
-}
-#contact p {
-    max-width: 600px;
-    margin: 0 auto 30px auto;
-    line-height: 1.6;
-}
+/* 📬 Contact Section */
+#contact { text-align: center; margin-top: 60px; }
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 input, textarea {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid var(--secondary-color);
-    background: var(--primary-color);
-    color: var(--text-color);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: white;
+  font-size: 1rem;
 }
 textarea { resize: vertical; min-height: 120px; }
 button[type="submit"] {
-    background: var(--accent-color);
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    padding: 10px;
-    cursor: pointer;
+  background: var(--accent-color);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 button[type="submit"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 111, 97, 0.3);
 }
-.social-links {
-    margin-top: 40px;
-}
-.social-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-.social-links a:hover { color: var(--accent-color); }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: var(--primary-color);
-    font-size: 0.9rem;
-    color: #777;
+  text-align: center;
+  padding: 20px;
+  background: rgba(255,255,255,0.7);
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 0.9rem;
+  color: #333;
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    .about-container { flex-direction: column; text-align: center; }
-}
-    </style>
+  </style>
 </head>
 <body>
 
-    <header class="main-header">
-        <nav>
-            <div class="logo" aria-label="Logo">[Your Initials]</div>
-            <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
-            <ul>
-                <li><a href="#about" aria-label="About Me">About</a></li>
-                <li><a href="#portfolio" aria-label="Portfolio">Portfolio</a></li>
-                <li><a href="#contact" aria-label="Contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="main-header">
+    <nav>
+      <div class="logo">[Your Initials]</div>
+      <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section id="hero">
-            <div class="hero-content">
-                <h1>Hi, I'm [Your Name]</h1>
-                <p class="subtitle">[Your Profession / Tagline]</p>
-                <a href="#portfolio" class="cta-button">View My Work</a>
-            </div>
-        </section>
+  <main>
+    <section id="hero">
+      <div class="hero-content">
+        <h1>Hi, I'm [Your Name]</h1>
+        <p class="subtitle">[Your Profession / Tagline]</p>
+        <a href="#portfolio" class="cta-button">View My Work</a>
+      </div>
+    </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="about-container">
-                <img src="[your-photo.jpg]" alt="Professional photo of [Your Name]" class="profile-photo">
-                <p>
-                    [Write a compelling paragraph about yourself here. Talk about your passion, your experience, and what drives you. Keep it engaging and professional.]
-                    <br><br>
-                    [Add a second paragraph talking about your specific skills or what you are looking for in your next role or project. This is your chance to sell yourself!]
-                </p>
-            </div>
-        </section>
-        
-        <section id="skills">
-             <h2>My Skills</h2>
-             <div class="skills-grid">
-                <div class="skill-item">[Skill 1, e.g., JavaScript]</div>
-                <div class="skill-item">[Skill 2, e.g., React]</div>
-                <div class="skill-item">[Skill 3, e.g., Node.js]</div>
-                <div class="skill-item">[Skill 4, e.g., Figma]</div>
-                <div class="skill-item">[Skill 5, e.g., UI/UX Design]</div>
-                <div class="skill-item">[Skill 6, e.g., Project Management]</div>
-             </div>
-        </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-container">
+        <img src="[your-photo.jpg]" alt="Professional photo of [Your Name]" class="profile-photo">
+        <p>
+          [Your bio goes here! Keep it fun, colorful and professional.]
+          <br><br>
+          [Talk about what makes you unique and what you love working on!]
+        </p>
+      </div>
+    </section>
+    
+    <section id="skills">
+      <h2>My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-item">HTML</div>
+        <div class="skill-item">CSS</div>
+        <div class="skill-item">JavaScript</div>
+        <div class="skill-item">React</div>
+        <div class="skill-item">Figma</div>
+        <div class="skill-item">UI/UX Design</div>
+      </div>
+    </section>
 
-        <section id="portfolio">
-            <h2>Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="[project1-image.jpg]" alt="Screenshot of Project 1">
-                    <h3>[Project Title 1]</h3>
-                    <p>[Brief description of the project, the technologies used, and your role.]</p>
-                    <a href="[link-to-project-1]" target="_blank" rel="noopener noreferrer">View Project</a>
-                </div>
-                <div class="portfolio-item">
-                    <img src="[project2-image.jpg]" alt="Screenshot of Project 2">
-                    <h3>[Project Title 2]</h3>
-                    <p>[Brief description of the project, the technologies used, and your role.]</p>
-                    <a href="[link-to-project-2]" target="_blank" rel="noopener noreferrer">View Project</a>
-                </div>
-                <div class="portfolio-item">
-                    <img src="[project3-image.jpg]" alt="Screenshot of Project 3">
-                    <h3>[Project Title 3]</h3>
-                    <p>[Brief description of the project, the technologies used, and your role.]</p>
-                    <a href="[link-to-project-3]" target="_blank" rel="noopener noreferrer">View Project</a>
-                </div>
-            </div>
-        </section>
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="[project1.jpg]" alt="Project 1">
+          <h3>Project 1</h3>
+          <p>A short description of this colorful project.</p>
+          <a href="#">View Project</a>
+        </div>
+        <div class="portfolio-item">
+          <img src="[project2.jpg]" alt="Project 2">
+          <h3>Project 2</h3>
+          <p>Another fun project description.</p>
+          <a href="#">View Project</a>
+        </div>
+      </div>
+    </section>
 
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <p>I'm currently available for freelance work and new opportunities. Let's create something great together.</p>
-            <!-- Contact Form -->
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="_replyto" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-            <div class="social-links">
-                <a href="[your-linkedin-url]" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="[your-github-url]" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="[your-twitter-url]" target="_blank" rel="noopener noreferrer">Twitter</a>
-            </div>
-        </section>
-    </main>
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <p>Let's create something colorful together! 💡</p>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 [Your Name]. All Rights Reserved.</p>
-    </footer>
-  
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Smooth scrolling
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetSection = document.querySelector(this.getAttribute('href'));
-                if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                document.querySelector('nav ul').classList.remove('show'); // Close menu on click
-            });
-        });
+  <footer>
+    <p>&copy; 2025 SAAD. Made with ❤️</p>
+  </footer>
 
-        // Hero CTA button smooth scroll
-        const ctaButton = document.querySelector('.hero-content .cta-button');
-        if(ctaButton) {
-            ctaButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        }
-
-        // Hamburger Menu Toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navMenu = document.querySelector('nav ul');
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-        });
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
     });
-    </script>
+
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('show');
+      });
+    });
+  });
+  </script>
 </body>
 </html>
